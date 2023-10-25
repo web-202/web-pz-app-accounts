@@ -1,0 +1,39 @@
+.header {
+    width: 100%;
+    background-color: #414043;
+    height: 70px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    margin-left: 22px;
+    align-items: center;
+    padding: 20px 10px 0 0;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    height: 70px;
+}
+
+.links .logo {
+    margin-left: 15px;
+    padding: 7px;
+    color: #dd6617;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.home-title {
+    margin-top: 15%;
+    height: 100px;
+    padding: 10px;
+}
+
+.active{
+    border-bottom: 3px solid #dd6617;
+}
