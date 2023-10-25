@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 import Header from "./layouts/Header";
-import Accounts from "./components/Accounts";
+import  Accounts  from "./components/Accounts";
+
 
 export default function Router() {
   return (
