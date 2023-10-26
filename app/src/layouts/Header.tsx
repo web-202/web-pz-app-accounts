@@ -14,10 +14,12 @@ function Header() {
     <>
       <header className="header">
         <div className="links">
-          <span className="logo ">WEB 22</span>
-
+          <NavLink to={"/"}>
+            <span className="logo ">WEB 22</span>
+          </NavLink>
           <NavLink to="/accounts">Accounts</NavLink>
           <NavLink to="/about/us">About Us</NavLink>
+          <NavLink to="/accounts/:id"></NavLink>
         </div>
       </header>
       {del ? (

@@ -1,6 +1,6 @@
 .accounts {
     margin: 0 auto;
-    width: 800px;
+    min-width: 900px;
     height: 100vh;
     margin: 0 24%;
 }
@@ -32,7 +32,6 @@
 
 .main-container {
     margin-top: 15px;
-
 }
 
 .main__total {
@@ -49,9 +48,53 @@
     font-weight: bold;
 }
 
-.main__hr{
+.main__hr {
     background-color: #919191;
     height: 0.9px;
     border: none;
     margin-top: 10px;
+}
+
+table {
+    min-width: 900px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th,
+td {
+    padding: 8px;
+    word-wrap: break-word;
+}
+
+
+.btns {
+    display: flex;
+    border-radius: 3px;
+}
+
+.btnEdit {
+    background-color: #06aa99;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    width: 50px;
+    height: 25px;
+    color: #fff;
+}
+
+.btnDelete {
+    background-color: #747474;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+}
+
+.linksName {
+    color: #000;
+    font-weight: 400;
+}
+
+.linksName:hover {
+    color: orangered;
 }

@@ -1,0 +1,27 @@
+.head {
+    background: url('../../public/img/kosmo.jpg');
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+}
+
+.profile {
+    margin: 5px 0 0 24%;
+    font-size: 15px;
+}
+
+.profile p {
+    margin: 5px 0;
+}
+
+.text-color {
+    color: #dd6617;
+}
+
+.imges {
+    width: 15px;
+    height: 15px;
+    background-color: #dd6617;
+    background-blend-mode: overlay;
+    border-radius: 100%;
+}

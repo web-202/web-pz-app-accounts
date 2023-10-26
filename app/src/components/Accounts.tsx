@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Account.css";
 import axios from "axios";
-interface Account {
+import { format } from "date-fns";
+import { NavLink } from "react-router-dom";
+
+export interface Account {
   id: number;
   name: string;
   account_name: string;
@@ -13,21 +16,21 @@ interface Account {
 
 export default function Accounts() {
   const [accounts, setAccounts] = useState<Account[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    try {
-      const response = axios
-        .get("http://localhost:3000/accounts")
-        .then((response) => {
-          setAccounts(response.data);
-        })
-        .catch((error) => {
-          console.log(error.response.data.message);
-          console.log(error.response.status);
-        });
-    } catch (error) {
-      console.error(error);
-    }
+    axios
+      .get("http://localhost:3000/accounts")
+      .then((response) => {
+        setAccounts(response.data as Account[]);
+      })
+      .catch((error) => {
+        console.log(error.response?.data?.message);
+        console.log(error.response?.status);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -43,7 +46,9 @@ export default function Accounts() {
         </div>
         <hr className="main__hr" />
 
-        {accounts.length > 0 ? (
+        {loading ? (
+          <p>Loading...</p>
+        ) : accounts.length > 0 ? (
           <table>
             <thead>
               <tr>
@@ -53,28 +58,44 @@ export default function Accounts() {
                 <th>Status</th>
                 <th>Start Date</th>
                 <th>Expiration Date</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               {accounts.map((account) => (
                 <tr key={account.id}>
-                  <td>{account.name}</td>
+                  <NavLink
+                    className="linksName"
+                    to={{ pathname: `/accounts/${account.id}` }}>
+                    <td>{account.name}</td>
+                  </NavLink>
                   <td>{account.account_name}</td>
                   <td>{account.email}</td>
                   <td>{account.status}</td>
-                  <td>{account.start_date}</td>
-                  <td>{account.expiration_date}</td>
                   <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    {format(
+                      new Date((account.start_date as number) * 1000),
+                      "dd MMM yyyy"
+                    )}
+                  </td>
+                  <td>
+                    {format(
+                      new Date((account.expiration_date as number) * 1000),
+                      "dd MMM yyyy"
+                    )}
+                  </td>
+
+                  <td>
+                    <div className="btns">
+                      <button className="btnEdit">Edit</button>
+                      <button className="btnDelete">Delete</button>
+                    </div>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         ) : (
-          <p>Loading...</p>
+          <p>No accounts found.</p>
         )}
       </div>
     </div>

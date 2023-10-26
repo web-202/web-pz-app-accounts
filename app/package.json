@@ -10,6 +10,8 @@
     "@types/node": "^16.18.59",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
+    "concurrently": "^8.2.2",
+    "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
@@ -22,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "db": "npx json-server --watch ./db/db.accounts.json --port 3001",
+    "db": "npx json-server --watch ./db/db.accounts.json ",
     "dev": "concurrently \"npm run db\" \"npm run start\""
   },
   "eslintConfig": {
