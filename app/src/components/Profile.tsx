@@ -6,12 +6,19 @@ import { format } from "date-fns";
 import "../styles/Profile.css";
 
 export default function Profile() {
+  
   const { id } = useParams<{ id: string }>();
   const [profile, setProfile] = useState<Account | null>(null);
 
+  function status(status: String) {
+    if (status === "Active") return "blue status";
+    else if (status === "Disable") return "yellow status";
+    else if (status === "Pending") return "red status";
+  }
+
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/accounts/${id}`)
+      .get(`http://localhost:3001/accounts/${id}`)
       .then((response) => {
         setProfile(response.data as Account);
       })
@@ -46,20 +53,13 @@ export default function Profile() {
               {profile.account_name}
             </p>
             <p>
-              <img
-                className="imges"
-                src="../../img/email.png"
-                alt="Profile"
-              />
+              <img className="imges" src="../../img/email.png" alt="Profile" />
               <span className="text-color"> E-mail:</span> {profile.email}
             </p>
             <p>
-              <img
-                className="imges"
-                src="../../img/star.png"
-                alt="Profile"
-              />
-              <span className="text-color"> Status:</span> {profile.status}
+              <img className="imges" src="../../img/star.png" alt="Profile" />
+              <span className="text-color"> Status:</span>{" "}
+              <span className={status(profile.status)}>{profile.status}</span>
             </p>
             <p>
               <img

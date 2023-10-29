@@ -19,12 +19,11 @@ function Header() {
           </NavLink>
           <NavLink to="/accounts">Accounts</NavLink>
           <NavLink to="/about/us">About Us</NavLink>
-          <NavLink to="/accounts/:id"></NavLink>
         </div>
       </header>
       {del ? (
         <h1 className="home-title center-align $40c4ff light-blue accent-3 white-text pulse">
-          Home Page
+         Hello Home Page
         </h1>
       ) : (
         ""

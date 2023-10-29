@@ -1,0 +1,53 @@
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 80px;
+    left: 27%;
+    height: 100vh;
+    transition: 0.3s ease-in-out;
+}
+
+.content-title {
+    font-size: 33px;
+    margin-bottom: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.content__left {
+    margin: 0 0 0 1%;
+    position: relative;
+    width: 220px;
+}
+
+.li:hover {
+    color: #dd6617;
+    cursor: pointer;
+}
+
+.content__right {
+    display: flex;
+    flex-direction: column;
+    width: 635px;
+    position: relative;
+    bottom: 33px;
+    left: 7%;
+}
+
+.title {
+    font-size: 21px;
+    line-height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.content-description {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.li.selected {
+    color: #dd6617;
+    font-weight: bold;
+}

@@ -3,6 +3,8 @@ import "../styles/Account.css";
 import axios from "axios";
 import { format } from "date-fns";
 import { NavLink } from "react-router-dom";
+import Modal from "./Modal";
+import EditModal from "./EditModal";
 
 export interface Account {
   id: number;
@@ -18,27 +20,110 @@ export default function Accounts() {
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [selectedAccount, setSelectedAccount] = useState<Account | null>();
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  if (isOpen) document.body.classList.add("scroll");
+  else if (!isOpen) document.body.classList.remove("scroll");
+
   useEffect(() => {
+    const fetchAccounts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3001/accounts");
+        const sortedAccounts = response.data as Account[];
+        sortedAccounts.sort((a, b) => b.id - a.id);
+        setAccounts(sortedAccounts);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        console.log(error);
+        setLoading(false);
+      }
+    };
+
+    fetchAccounts();
+  }, []);
+
+  const isCloseFunc = () => {
+    setIsOpen(false);
+  };
+
+  const isOpenFunc = () => {
+    setIsOpen(true);
+  };
+
+  const openEditModal = (account: Account) => {
+    setSelectedAccount(account);
+    setIsEditOpen(true);
+  };
+
+  const closeEditModal = () => {
+    setIsEditOpen(false);
+    setSelectedAccount(null);
+  };
+
+  const updateAccountList = (newUser: Account) => {
+    const updatedAccounts = [...accounts];
+    const existingAccountIndex = updatedAccounts.findIndex(
+      (account) => account.id === newUser.id
+    );
+    if (existingAccountIndex !== -1) {
+      updatedAccounts[existingAccountIndex] = newUser;
+    } else {
+      updatedAccounts.push(newUser);
+    }
+
+    updatedAccounts.sort((a, b) => b.id - a.id);
+
+    setAccounts(updatedAccounts);
+  };
+
+  const handleDeleteAccount = (account: Account) => {
+    // Trigger the API call to delete the account
     axios
-      .get("http://localhost:3000/accounts")
-      .then((response) => {
-        setAccounts(response.data as Account[]);
+      .delete(`http://localhost:3001/accounts/${account.id}`)
+      .then(() => {
+        // Remove the deleted account from the UI
+        const updatedAccounts = accounts.filter((a) => a.id !== account.id);
+        setAccounts(updatedAccounts);
       })
       .catch((error) => {
-        console.log(error.response?.data?.message);
-        console.log(error.response?.status);
-      })
-      .finally(() => {
-        setLoading(false);
+        console.error("Error deleting account:", error);
       });
-  }, []);
+  };
+
+  function status(status: string) {
+    if (status === "Active") return "blue status";
+    else if (status === "Disable") return "yellow status";
+    else if (status === "Pending") return "red status";
+  }
 
   return (
     <div className="accounts">
       <div className="accountUp">
         <h1 className="account-title">Account list</h1>
-        <button className="newAccountBtn">Create account</button>
+        <button className="newAccountBtn" onClick={isOpenFunc}>
+          Create account
+        </button>
+        <Modal
+          isOpen={isOpen}
+          isClose={isCloseFunc}
+          updateAccountList={updateAccountList}
+        >
+          <></>
+        </Modal>
       </div>
+
+      {selectedAccount && (
+        <EditModal
+          isOpen={isEditOpen}
+          isClose={closeEditModal}
+          updateResult={updateAccountList}
+          resultToEdit={selectedAccount}
+        />
+      )}
 
       <div className="main-container">
         <div className="main__total">
@@ -54,7 +139,7 @@ export default function Accounts() {
               <tr>
                 <th>Name</th>
                 <th>Account Name</th>
-                <th>Email</th>
+                <th className="email">Email</th>
                 <th>Status</th>
                 <th>Start Date</th>
                 <th>Expiration Date</th>
@@ -63,20 +148,32 @@ export default function Accounts() {
             <tbody>
               {accounts.map((account) => (
                 <tr key={account.id}>
-                  <NavLink
-                    className="linksName"
-                    to={{ pathname: `/accounts/${account.id}` }}>
-                    <td>{account.name}</td>
-                  </NavLink>
+                  <td>
+                    <NavLink
+                      className="linksName"
+                      to={{ pathname: `/accounts/${account.id}` }}
+                    >
+                      <span>{account.name}</span>
+                    </NavLink>
+                  </td>
+
                   <td>{account.account_name}</td>
-                  <td>{account.email}</td>
-                  <td>{account.status}</td>
+
+                  <td className="email">{account.email}</td>
+
+                  <td>
+                    <span className={status(account.status)}>
+                      {account.status}
+                    </span>
+                  </td>
+
                   <td>
                     {format(
                       new Date((account.start_date as number) * 1000),
                       "dd MMM yyyy"
                     )}
                   </td>
+
                   <td>
                     {format(
                       new Date((account.expiration_date as number) * 1000),
@@ -86,8 +183,18 @@ export default function Accounts() {
 
                   <td>
                     <div className="btns">
-                      <button className="btnEdit">Edit</button>
-                      <button className="btnDelete">Delete</button>
+                      <button
+                        className="btnEdit"
+                        onClick={() => openEditModal(account)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="btnDelete"
+                        onClick={() => handleDeleteAccount(account)}
+                      >
+                        Delete
+                      </button>
                     </div>
                   </td>
                 </tr>
@@ -95,7 +202,7 @@ export default function Accounts() {
             </tbody>
           </table>
         ) : (
-          <p>No accounts found.</p>
+          <p className="red-text">No accounts found.</p>
         )}
       </div>
     </div>

@@ -61,10 +61,15 @@ table {
     table-layout: fixed;
 }
 
+.email {
+    width: 215px;
+}
+
 th,
 td {
     padding: 8px;
     word-wrap: break-word;
+    font-size: 13px;
 }
 
 
@@ -78,7 +83,7 @@ td {
     margin-right: 5px;
     border: none;
     border-radius: 3px;
-    width: 50px;
+    width: 60px;
     height: 25px;
     color: #fff;
 }
@@ -97,4 +102,33 @@ td {
 
 .linksName:hover {
     color: orangered;
+}
+
+.status {
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+    width: 70px;
+}
+
+.red {
+    background-color: #DF344A;
+}
+
+.blue {
+    background-color: #027DFF;
+}
+
+.yellow {
+    background-color: #FEC20D;
+    color: #000;
+}
+
+
+.scroll{
+    overflow: hidden;
 }
