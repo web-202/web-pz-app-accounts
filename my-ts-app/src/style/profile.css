@@ -1,0 +1,32 @@
+.image {
+  height: 100px;
+  width: 100%;
+}
+
+.main {
+  margin-left: 200px;
+}
+
+.name {
+  font-size: 23px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 30px;
+}
+
+li {
+  margin-top: 10px;
+}
+
+.spanText {
+  color: chocolate;
+  margin: 0;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+}

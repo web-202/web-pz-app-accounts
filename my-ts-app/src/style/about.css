@@ -1,0 +1,27 @@
+.about{
+    display: flex;
+}
+
+.buttonsW{
+    position: fixed;
+    top: 13%;
+    left: 20%;
+    display:grid;
+    grid-template-rows: 25px 25px 25px;
+}
+
+.left{
+    width: 40%;
+}
+
+.buttonsW > button { 
+    font-size: 17px;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 0;
+}
+
+.contents{
+    width: 600px;
+}
