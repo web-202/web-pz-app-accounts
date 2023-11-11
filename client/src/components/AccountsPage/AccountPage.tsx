@@ -10,14 +10,16 @@ type Account = {
   account_name: string,
   email: string;
   status: string,
-  start_date: string,
-  expiration_date: string;
+  start_date: number,
+  expiration_date: number;
 };
 
 function AccountPage() {
   const {id} = useParams<{ id: string }>();
   const [account, setAccount] = useState<Account>();
-
+  const [isLoading, setIsLoading] = useState(true);
+  const [startDate, setStartDate] = useState(new Date());
+  const [expirationDate, setExpirationDate] = useState(new Date());
   useEffect(() => {
     getAccounts();
   }, []);
@@ -30,6 +32,10 @@ function AccountPage() {
         },
       });
       setAccount(data);
+      setStartDate(new Date(data.start_date / 1000))
+      console.log(new Date(data.start_date / 1000).toISOString())
+      setExpirationDate(new Date(data.expiration_date / 1000))
+      setIsLoading(false);
 
     } catch (e) {
       console.log(e)
@@ -46,13 +52,22 @@ function AccountPage() {
             <div className="account-header">
             </div>
             <div className="account-content">
-              <p className={'account-name'}>{account.name}</p>
+              <h1>{account.name}</h1>
               <p>Name: {account.name}</p>
               <p>Account name: {account.account_name}</p>
               <p>E-mail: {account.email}</p>
               <p>Status: {account.status}</p>
-              <p>Start date: {account.start_date}</p>
-              <p>Expiration date: {account.expiration_date}</p>
+
+              <p>Start date: {new Date(startDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}</p>
+              <p>Expiration date: {new Date(expirationDate).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+              })}</p>
             </div>
           </div>
         </>

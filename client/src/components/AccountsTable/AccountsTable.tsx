@@ -93,6 +93,9 @@ function AccountsTable() {
         start_date: new Date(dateStart).getTime() / 1000,
         expiration_date: new Date(dateExpiration).getTime() / 1000
       }
+      setName('');
+      setAccountName('');
+      setEmail('');
       const {data} = await axios.post('http://localhost:5000/accounts', user);
       await getAccounts();
       setIsOpen(false)
