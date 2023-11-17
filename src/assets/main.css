@@ -1,8 +1,6 @@
 @import './base.css';
 @import 'bootstrap/dist/css/bootstrap.css';
 @import 'bootstrap/dist/css/bootstrap-grid.css';
-@import './font/fontawesome-free-5.15.4-web/css/all.css';
-@import './font/fontawesome-free-5.15.4-web/css/solid.css';
 #app {
   width: 100%;
   margin: 0 auto;
