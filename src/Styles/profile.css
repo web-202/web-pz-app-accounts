@@ -1,0 +1,26 @@
+.header_Second {
+    height: 120px;
+    min-width: 100%;
+    background-image: url("https://wallpapers-fenix.eu/full/141215/212314347.jpg");
+    background-repeat: no-repeat;
+}
+
+.content_Profile {
+    margin: 0 250px;
+    height: 77vh;
+    width: 65%;
+}
+
+.text_Block {
+    display: flex;
+    color: black;
+    flex-direction: column;
+    width: max-content;
+    height: 100px;
+}
+.text{
+    font-size: 20px;
+}
+.text_title{
+    font-size: 40px;
+}

@@ -1,0 +1,377 @@
+* {
+    margin-left: -0;
+    margin-top: -0;
+}
+
+body, html, #root {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    background: #565657;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.web22 {
+    color: orange;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+    margin-left: 20px;
+    border: 3px solid white;
+    border-radius: 5px;
+}
+
+.label {
+    margin-left: 10px;
+    padding-top: 5px;
+    display: flex;
+    text-align: center;
+    color: white;
+}
+.label:hover{
+    cursor: pointer;
+}
+.meanName{
+    cursor: pointer;
+
+}
+.edit:hover{
+    cursor: pointer;
+
+}
+.delete:hover{
+    cursor: pointer;
+
+}
+
+.if:active {
+    background: #ff831c;
+}
+
+.blockfunc {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+}
+
+.openButt {
+    background: dodgerblue;
+    position: absolute;
+    height: 40px;
+    right: -0;
+}
+
+.toptext {
+
+
+}
+
+.accountlist {
+    margin: 10px 200px;
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    z-index: 0;
+    position: relative;
+    flex-direction: column;
+
+}
+
+.cal {
+    bottom: -5px;
+    position: absolute;
+    height: 30px;
+    width: 40px;
+}
+
+.create {
+    font-size: 20px;
+    padding-top: 5px;
+    text-align: center;
+    background: dodgerblue;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+}
+
+.toptext {
+    display: flex;
+}
+
+.totalblock {
+    opacity: 80%;
+    background: #55c2e1;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.total {
+    padding: 20px;
+}
+
+.accounts {
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 50px;
+    border: solid #8d8f91 1px;
+    display: flex;
+    font-size: 20px;
+}
+
+.txt {
+    font-weight: bold;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+
+.txtStatus {
+    font-weight: bold;
+    margin-left: 200px;
+    padding-top: 10px;
+}
+
+.txtSDate {
+    font-weight: bold;
+    margin-left: 50px;
+    padding-top: 10px;
+}
+
+.txtEDate {
+    font-weight: bold;
+    margin-left: 140px;
+    padding-top: 10px;
+}
+
+.postaccount {
+    margin-top: 5px;
+    min-height: 50px;
+    border: solid #8798a6 1px;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    word-wrap: break-word;
+    height: max-content;
+}
+
+.meanName {
+
+    width: 100px;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.meanAc {
+    align-items: center;
+    width: 100px;
+    margin-left: 30px;
+}
+
+.meanEmail {
+    align-items: center;
+    width: 150px;
+    margin-left: 50px;
+}
+
+.meanStatus {
+    padding: 5px;
+
+
+}
+
+.meanStartDate {
+    width: 150px;
+    margin-left: 35px;
+    align-items: center;
+
+}
+
+.meanExpirationDate {
+    margin-left: 80px;
+    width: 150px;
+    align-items: center;
+}
+
+.edit {
+    font-size: 20px;
+    padding-top: 5px;
+    height: 38px;
+    width: 70px;
+    background: #23caae;
+    border-radius: 5px;
+
+}
+
+.delete {
+    padding-top: 5px;
+    margin-left: 10px;
+    height: 30px;
+    width: 90px;
+    background: #8d8f91;
+    border: solid black 2px;
+    border-radius: 5px;
+}
+
+.func {
+    margin-right: 10px;
+    margin-top: 7px;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    right: 0;
+
+}
+
+.status {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80px;
+    height: max-content;
+    margin-left: 90px;
+    background: #ff831c;
+    border-radius: 5px;
+}
+
+.blockDate {
+    display: flex;
+}
+
+.exp {
+    display: flex;
+    flex-direction: column;
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50%;
+
+}
+
+.inpName {
+    padding: -0 -0;
+    margin-bottom: 0;
+    margin-top: 15px;
+
+}
+
+.cross {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.cross:hover {
+    cursor: pointer;
+}
+
+.blockModal {
+    border-radius: 5px;
+}
+
+.createText {
+    margin-bottom: 0;
+}
+
+.exp {
+    margin-left: 40px;
+    position: relative;
+    width: 50%;
+}
+
+.inp {
+    width: 100%;
+}
+
+.cancel {
+    background: #8d8f91;
+    width: 80px;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.save {
+    margin-left: 15px;
+    background: #55c2e1;
+    width: 60px;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 20px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+.csBlock {
+    margin-left: 0;
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+}
+
+.save:hover {
+    cursor: pointer;
+}
+
+select option:checked {
+    background: #198d08;
+    color: #fff;
+}
+
+.contentProfile {
+    background: chartreuse;
+    width: 100%;
+    height: 100%;
+}
+.body{
+}
+.blockDate{
+    display: flex;
+
+}
+.block{
+    margin: 20px 200px;
+    display: flex;
+}
+.text_Content{
+    width: 300px;
+    margin-left: 700px;
+    font-size: 20px;
+}
+.menu{
+    color: black;
+    position: fixed;
+    margin-left: 500px;
+}
+*{
+    scroll-behavior:smooth ;
+}
+a{
+    font-size: 20px;
+    text-decoration: black;
+}
