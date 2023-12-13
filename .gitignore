@@ -10,6 +10,10 @@
 /tests/kendo-themes/tests/visual/styles
 /cypress
 
+
+# dependencies
+/node_modules
+
 # dependencies
 /node_modules
 

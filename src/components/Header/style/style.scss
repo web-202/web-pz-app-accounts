@@ -1,0 +1,29 @@
+.logo{
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    color: rgb(213, 164, 73);
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+
+
+.nav {
+    padding: 20px;
+    
+    .nav-item .nav-link.active{
+        color: orange;
+    }
+
+    a{
+        color: white;
+        text-decoration: none;
+        
+        .active{
+            color: orange;
+        }
+    
+    }
+}

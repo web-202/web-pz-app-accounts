@@ -1,0 +1,59 @@
+.container{
+    margin-top: 30px;
+
+    .top-container{
+        justify-content: space-between;
+        display: flex;
+        .title-list{
+            font-size: 30px;
+        }
+    }
+
+    .count-container{
+        background-color: #cde8f1;
+        margin-top: 10px;
+        font-size: 15px;
+        padding: 10px;
+        color: #6b8d92;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .table{
+        margin-top: 20px;
+
+        .edit-btn{
+            background-color: #1399ae;
+            border: 0;
+        }
+
+        .remove-btn{
+            background-color: #636870;
+            border: 0;
+        }
+
+        .status{
+            height: max-content;
+            border-radius: 5px;
+            color: white;
+            padding: 1px;
+            text-align: center;
+            font-size: 15px;
+            width: 80px;
+            font-weight: bolder;
+        }
+
+        .active-acc{
+            background-color: #096af6;
+        }
+
+        .disable-acc{
+            background-color: #fbb911;
+            color: black;
+        }
+
+        .pending-acc{
+            background-color: #c12b3a;
+        }
+    }
+}
