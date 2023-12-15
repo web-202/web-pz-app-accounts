@@ -15,7 +15,7 @@ const Header: FC<HeaderProps> = ({currentPage}) => {
         <li className="header-navigation__item">
                                      <span
                                        className={"header-navigation__link__logo"}>
-                                          WEB 22
+                                          Web 202
                                      </span>
         </li>
         <li className="header-navigation__item">
