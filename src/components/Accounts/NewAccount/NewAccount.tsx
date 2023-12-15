@@ -169,11 +169,9 @@ const NewAccount: React.FC<NewAccountFormProps> = ({id}) => {
                             <Form.Control
                                 type="date"
                                 name='start_date'
-                                value={accountData.start_date}
                                 onChange={handleInputChange}         
-                                autoFocus                               
                                 min={today}
-                                required
+                                autoFocus                               
                             />
                             {validationErrors.start_date && <div className="error">{validationErrors.start_date}</div>}
                             </Form.Group>
@@ -185,10 +183,8 @@ const NewAccount: React.FC<NewAccountFormProps> = ({id}) => {
                                 type="date"
                                 autoFocus
                                 name='expiration_date'
-                                value={accountData.expiration_date}
+                                min={today}                        
                                 onChange={handleInputChange}                                       
-                                min={today}
-                                required
                             />
                             {validationErrors.expiration_date && <div className="error">{validationErrors.expiration_date}</div>}
                             </Form.Group>
