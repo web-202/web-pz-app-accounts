@@ -1,9 +1,17 @@
-import React, { useState, ChangeEventHandler} from "react"
+import React, { useState, ChangeEventHandler, useEffect} from "react"
 import { Button, Modal, Form, Row, Col } from 'react-bootstrap'
 import Account from "../../../domain/Account";
 import HttpAccounts from "../../../http/http-accounts";
 import './style/style.scss'
 
+interface DateState {
+    start_date: string;
+    expiration_date: string;
+}
+
+interface ExpirationDateState {
+    expiration_date: string;
+}
 
 interface NewAccountFormProps {
     id: number
@@ -15,7 +23,20 @@ const NewAccount: React.FC<NewAccountFormProps> = ({id}) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const today = new Date().toISOString().split('T')[0]; 
+    let today = new Date().toISOString().split('T')[0]; 
+
+    const [dateData, setDate] = useState<ExpirationDateState>({
+        expiration_date: today
+    })
+   
+   
+
+    useEffect(() => {
+        const date: ExpirationDateState = {
+            expiration_date: new Date(accountData.start_date * 1000).toISOString().split('T')[0]
+        }
+        setDate(date)
+    })
 
     const [accountData, setAccountData] = useState<Account>({
         id,
@@ -41,7 +62,7 @@ const NewAccount: React.FC<NewAccountFormProps> = ({id}) => {
         if (name === 'start_date' || name === 'expiration_date') {
             const date = new Date(value);
             const unixTimestamp = Math.floor(date.getTime() / 1000);
-        
+
             setAccountData((prevData) => ({
               ...prevData,
               [name]: unixTimestamp,
@@ -183,12 +204,12 @@ const NewAccount: React.FC<NewAccountFormProps> = ({id}) => {
                                 type="date"
                                 autoFocus
                                 name='expiration_date'
-                                min={today}                        
+                                min={dateData.expiration_date}                        
                                 onChange={handleInputChange}                                       
                             />
                             {validationErrors.expiration_date && <div className="error">{validationErrors.expiration_date}</div>}
                             </Form.Group>
-                        </Col> 
+                        </Col>  
                     </Row>
                 </Form>
             </Modal.Body>
