@@ -1,0 +1,42 @@
+.container{
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: orange;
+    }
+    
+    .content{
+      display: flex;
+    }
+
+    .questions{
+        width: 30%;
+        position: relative;
+
+        .fix-questions{
+            position: fixed;
+        }
+    }
+
+    .answers{
+        width: 70%;
+    }
+
+    .answer-item{
+        margin-top: 20px;
+    }
+
+    .title-answer{
+        font-size: 20px;
+        font-weight: bolder;
+        margin-bottom: 5px;
+    }
+
+    .title{
+        font-size: 30px;
+        font-weight: bolder;
+    }
+}

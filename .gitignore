@@ -26,6 +26,8 @@
 .settings/
 *.sublime-workspace
 
+.env
+
 # IDE - VSCode
 .vscode/*
 

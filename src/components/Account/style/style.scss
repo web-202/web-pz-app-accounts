@@ -1,0 +1,44 @@
+.attr-account{
+    color: orange;
+    font-weight: bolder;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.items-content{
+    padding: 5px;
+    align-self: center;
+    display: flex;
+
+    .status{
+        height: max-content;
+        border-radius: 5px;
+        padding: 1px;
+        text-align: center;
+        font-size: 15px;
+        width: max-content;
+        font-weight: bolder;
+    }
+
+    .active-acc{
+        background-color: #096af6;
+        color: white;
+    }
+
+    .disable-acc{
+        background-color: #fbb911;
+        color: black;
+    }
+
+    .pending-acc{
+        background-color: #c12b3a;
+        color: white;
+    }
+
+}
+
+
+.header{
+    background-image: url('../../../assets/why-is-sky-blue.jpg');
+    height: 200px;
+}

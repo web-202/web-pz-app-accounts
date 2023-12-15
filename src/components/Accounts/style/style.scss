@@ -22,6 +22,15 @@
     .table{
         margin-top: 20px;
 
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover{
+            color: #096af6;
+        }
+
         .edit-btn{
             background-color: #1399ae;
             border: 0;
@@ -35,16 +44,16 @@
         .status{
             height: max-content;
             border-radius: 5px;
-            color: white;
             padding: 1px;
             text-align: center;
             font-size: 15px;
-            width: 80px;
+            width: max-content;
             font-weight: bolder;
         }
 
         .active-acc{
             background-color: #096af6;
+            color: white;
         }
 
         .disable-acc{
@@ -54,6 +63,7 @@
 
         .pending-acc{
             background-color: #c12b3a;
+            color: white;
         }
     }
 }
