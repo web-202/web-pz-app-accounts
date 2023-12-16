@@ -55,7 +55,7 @@ function AccountPage() {
               <h1>{account.name}</h1>
               <p>Name: {account.name}</p>
               <p>Account name: {account.account_name}</p>
-              <p>E-mail: {account.email}</p>
+              <p>E-mail: {account.email} {account.account_name}</p> 
               <p>Status: {account.status}</p>
 
               <p>Start date: {new Date(startDate).toLocaleDateString('en-US', {

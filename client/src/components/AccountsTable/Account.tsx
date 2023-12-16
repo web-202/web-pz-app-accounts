@@ -76,7 +76,7 @@ const Account: FC<AccountProps> = ({
         return;
       }
       const accountUpdate = {
-        name: nameEdit,
+           name: nameEdit,
         account_name: accountNameEdit,
         email: emailEdit,
         status: select,
