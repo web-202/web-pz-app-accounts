@@ -80,8 +80,8 @@ const Account: FC<AccountProps> = ({
         account_name: accountNameEdit,
         email: emailEdit,
         status: select,
-        start_date: new Date(startDateEdit).getTime() / 1000,
-        expiration_date: new Date(expirationDateEdit).getTime() / 1000
+        start_date: new Date(startDateEdit).getTime() ,
+        expiration_date: new Date(expirationDateEdit).getTime() 
       }
       await axios.put(`http://localhost:5000/accounts/${id}`, accountUpdate);
       await getAccounts();
@@ -156,6 +156,7 @@ const Account: FC<AccountProps> = ({
               <p>Start date</p>
               <input value={startDateEdit && new Date(startDateEdit).toISOString().split('T')[0]} type={'date'}
                      onChange={(e) => setStartDateEdit(new Date(e.target.value))}/>
+        
             </div>
             <div className="expiration-date">
               <p>Expiration date</p>

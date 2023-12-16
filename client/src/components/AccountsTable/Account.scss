@@ -2,7 +2,7 @@
 }
 
 .account-name:hover {
-  color: #ca734e;
+  color: #ac26c7;
   cursor: pointer;
 }
 
@@ -17,18 +17,23 @@
 }
 
 .Pending {
-  background-color: #db2f40;
+  background-color: #ff0019;
   color: white;
+  border-radius: 50px;
 }
 
 .Disable {
-  background-color: #fbb602;
+  background-color: #f4b209;
   color: black;
+  border-radius: 50px;
+
 }
 
 .Active {
-  background-color: #0070fd;
+  background-color: #3f88e0;
   color: white;
+  border-radius: 50px;
+
 }
 
 .btn-communication {
@@ -39,10 +44,10 @@
 .edit-btn {
   cursor: pointer;
   color: white;
-  background-color: #1697ad;
+  background-color: #44c9e0;
   border: none;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 50px;
   font-size: 14px;
 }
 
@@ -60,7 +65,7 @@
   background-color: #606971;
   border: none;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 50px;
   font-size: 14px;
 }
 .del-btn:hover {

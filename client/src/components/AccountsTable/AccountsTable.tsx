@@ -122,9 +122,9 @@ function AccountsTable() {
       >
         <h2>Create account</h2>
         <div className={'modal'}>
-          <p>Name*</p>
+          <p>Name:</p>
           <input type={'text'} value={name} onChange={(e) => setName(e.target.value)}/>
-          <p>Account*</p>
+          <p>Account:</p>
           <input type={'text'} value={accountName} onChange={(e) => setAccountName(e.target.value)}/>
           <p>Example select</p>
           <select onChange={(e) => setSelect(e.target.value)}
@@ -133,7 +133,7 @@ function AccountsTable() {
             <option value={'Pending'}>Pending</option>
             <option value={'Active'}>Active</option>
           </select>
-          <p>Email*</p>
+          <p>Email:</p>
           <input type={'email'} value={email} onChange={(e) => setEmail(e.target.value)}/>
 
           <div className="container-date">
