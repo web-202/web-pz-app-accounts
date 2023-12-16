@@ -1,0 +1,50 @@
+.about-wrapper{
+  display: flex;
+  justify-content: center;
+}
+.about-us-container {
+  display: flex;
+  width: 60vw;
+}
+
+.sections {
+  padding: 20px;
+  overflow: hidden;
+  position: fixed;
+  left: 5%;
+  top: 10%;
+}
+
+.sections ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sections li {
+  margin-bottom: 10px;
+}
+
+.sections a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.sections a:hover {
+  color: #007bff;
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+

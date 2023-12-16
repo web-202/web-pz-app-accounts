@@ -1,0 +1,78 @@
+.account {
+}
+
+.account-name:hover {
+  color: #ac26c7;
+  cursor: pointer;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.Pending {
+  background-color: #ff0019;
+  color: white;
+  border-radius: 50px;
+}
+
+.Disable {
+  background-color: #f4b209;
+  color: black;
+  border-radius: 50px;
+
+}
+
+.Active {
+  background-color: #3f88e0;
+  color: white;
+  border-radius: 50px;
+
+}
+
+.btn-communication {
+  display: flex;
+  gap: 5px;
+}
+
+.edit-btn {
+  cursor: pointer;
+  color: white;
+  background-color: #44c9e0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+.edit-btn:hover {
+  background-color: #126d82;
+}
+
+.edit-btn:active {
+  background-color: #0e5b6e;
+}
+
+.del-btn {
+  cursor: pointer;
+  color: white;
+  background-color: #606971;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+.del-btn:hover {
+  background-color: #44494f;
+}
+
+.del-btn:active {
+  background-color: #3a3e42;
+
+}
