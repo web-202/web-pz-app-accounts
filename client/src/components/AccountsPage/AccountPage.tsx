@@ -32,9 +32,9 @@ function AccountPage() {
         },
       });
       setAccount(data);
-      setStartDate(new Date(data.start_date / 1000))
-      console.log(new Date(data.start_date / 1000).toISOString())
-      setExpirationDate(new Date(data.expiration_date / 1000))
+      setStartDate(new Date(data.start_date * 1000))
+      console.log(new Date(data.start_date * 1000).toISOString())
+      setExpirationDate(new Date(data.expiration_date * 1000))
       setIsLoading(false);
 
     } catch (e) {
